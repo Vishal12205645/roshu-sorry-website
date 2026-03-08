@@ -1,0 +1,87 @@
+body{
+margin:0;
+font-family:cursive;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9a9e,#ffdde1);
+overflow:hidden;
+text-align:center;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+max-width:500px;
+z-index:2;
+}
+
+.title{
+color:#ff3366;
+font-size:40px;
+}
+
+.love{
+color:#ff0055;
+font-size:45px;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px pink;}
+to{ text-shadow:0 0 30px red;}
+}
+
+.message{
+font-size:18px;
+color:#444;
+margin:20px 0;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+button{
+padding:12px 25px;
+font-size:16px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin:10px;
+}
+
+.yes{
+background:#ff4d6d;
+color:white;
+}
+
+.no{
+background:#888;
+color:white;
+position:absolute;
+}
+
+.emoji{
+font-size:40px;
+margin-top:20px;
+}
+
+/* floating hearts */
+
+.hearts{
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://i.imgur.com/9QZ7Z9y.png");
+animation:moveHearts 20s linear infinite;
+opacity:0.3;
+}
+
+@keyframes moveHearts{
+0%{background-position:0 100%;}
+100%{background-position:0 -100%;}
+}
