@@ -8,7 +8,10 @@ align-items:center;
 background:linear-gradient(135deg,#ff9a9e,#ffdde1);
 overflow:hidden;
 text-align:center;
+position:relative;
 }
+
+/* main card */
 
 .container{
 background:white;
@@ -18,6 +21,8 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 max-width:500px;
 z-index:2;
 }
+
+/* titles */
 
 .title{
 color:#ff3366;
@@ -30,16 +35,26 @@ font-size:45px;
 animation:glow 2s infinite alternate;
 }
 
+/* glowing effect */
+
 @keyframes glow{
-from{ text-shadow:0 0 10px pink;}
-to{ text-shadow:0 0 30px red;}
+from{
+text-shadow:0 0 10px pink;
 }
+to{
+text-shadow:0 0 30px red;
+}
+}
+
+/* message */
 
 .message{
 font-size:18px;
 color:#444;
 margin:20px 0;
 }
+
+/* buttons */
 
 .buttons{
 margin-top:20px;
@@ -52,6 +67,11 @@ border:none;
 border-radius:10px;
 cursor:pointer;
 margin:10px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
 }
 
 .yes{
@@ -65,23 +85,39 @@ color:white;
 position:absolute;
 }
 
+/* emojis */
+
 .emoji{
 font-size:40px;
 margin-top:20px;
 }
 
-/* floating hearts */
+/* floating hearts animation */
 
 .hearts{
-position:absolute;
+position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-background:url("https://i.imgur.com/9QZ7Z9y.png");
-animation:moveHearts 20s linear infinite;
-opacity:0.3;
+pointer-events:none;
+z-index:1;
 }
 
-@keyframes moveHearts{
-0%{background-position:0 100%;}
-100%{background-position:0 -100%;}
+.hearts::before{
+content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+position:absolute;
+font-size:28px;
+animation:fall 12s linear infinite;
+opacity:0.4;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100%);
+}
+
+100%{
+transform:translateY(100vh);
+}
 }
